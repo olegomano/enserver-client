@@ -1,0 +1,3 @@
+[submodule "components/engproto"]
+	path = components/engproto
+	url = git@github.com:polinomov/engproto.git
