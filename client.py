@@ -6,7 +6,7 @@ import components.server_listener as server_listener
 import sys
 import time
 import threading
-
+import argparse
 
 class GameContext():
     def __init__(self):
@@ -52,7 +52,10 @@ class GameContext():
             #    print("Loop Exception : " + str(e))
 
 def main():
-    ip = "tcp://192.168.0.130"
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--ip")
+    args = parser.parse_args()
+    ip = "tcp://" +str(args.ip)
     context = GameContext()
     context.start(ip)
     #threading.Thread(target=write_server).start()
