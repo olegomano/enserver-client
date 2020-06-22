@@ -25,6 +25,6 @@ class ServerListener:
         commands.ParseFromString(data)
         pbEnd = time.time()
 
-        print("Network: " + str( (recvEnd-recvStart)*1000) + "ms ProtoBuff: " + str((pbEnd - pbStart)*1000))
+        #print("Network: " + str( (recvEnd-recvStart)*1000) + "ms ProtoBuff: " + str((pbEnd - pbStart)*1000))
 
         return commands

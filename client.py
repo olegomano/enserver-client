@@ -3,6 +3,7 @@ from ui.mainwindow import Scene
 #import message.engproto.enginecmd_pb2 as Message
 import components.server_publisher as server_publisher
 import components.server_listener as server_listener
+import components.debug_commander as debug_commander
 import sys
 import time
 import threading
@@ -23,6 +24,11 @@ class GameContext():
         w.setCentralWidget(self.scene)
         w.show()
         threading.Thread(target=self.read_server).start()
+     
+        debug = debug_commander.DebugCommander(self.ip)
+        debug.connect()
+        print(debug.getVersion())
+
         sys.exit(self.app.exec_())
      
     def read_server(self):
@@ -33,7 +39,7 @@ class GameContext():
         while(True):
             now = time.time()
             delta = now - prev
-            print("FrameTime: " + str(delta*1000) + "ms")
+            #print("FrameTime: " + str(delta*1000) + "ms")
             prev = now
 
             msg = reader.read()

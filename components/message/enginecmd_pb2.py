@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='encommand',
   syntax='proto3',
   serialized_options=_b('Z\014enbuffer/cmd'),
-  serialized_pb=_b('\n\x0f\x65nginecmd.proto\x12\tencommand\">\n\x07\x43ommand\x12\x0c\n\x04Name\x18\x01 \x01(\t\x12\x0b\n\x03Opa\x18\x02 \x01(\x05\x12\x0b\n\x03Opb\x18\x03 \x01(\x05\x12\x0b\n\x03Opc\x18\x04 \x01(\x05\".\n\x0b\x43ommandList\x12\x1f\n\x03\x43md\x18\x01 \x03(\x0b\x32\x12.encommand.CommandB\x0eZ\x0c\x65nbuffer/cmdb\x06proto3')
+  serialized_pb=_b('\n\x0f\x65nginecmd.proto\x12\tencommand\">\n\x07\x43ommand\x12\x0c\n\x04Name\x18\x01 \x01(\t\x12\x0b\n\x03Opa\x18\x02 \x01(\x05\x12\x0b\n\x03Opb\x18\x03 \x01(\x05\x12\x0b\n\x03Opc\x18\x04 \x01(\x05\".\n\x0b\x43ommandList\x12\x1f\n\x03\x43md\x18\x01 \x03(\x0b\x32\x12.encommand.Command\"-\n\x0c\x44\x65\x62ugCommand\x12\x0f\n\x07\x43ommand\x18\x01 \x01(\t\x12\x0c\n\x04\x41rgs\x18\x02 \x03(\tB\x0eZ\x0c\x65nbuffer/cmdb\x06proto3')
 )
 
 
@@ -107,9 +107,48 @@ _COMMANDLIST = _descriptor.Descriptor(
   serialized_end=140,
 )
 
+
+_DEBUGCOMMAND = _descriptor.Descriptor(
+  name='DebugCommand',
+  full_name='encommand.DebugCommand',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Command', full_name='encommand.DebugCommand.Command', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Args', full_name='encommand.DebugCommand.Args', index=1,
+      number=2, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=142,
+  serialized_end=187,
+)
+
 _COMMANDLIST.fields_by_name['Cmd'].message_type = _COMMAND
 DESCRIPTOR.message_types_by_name['Command'] = _COMMAND
 DESCRIPTOR.message_types_by_name['CommandList'] = _COMMANDLIST
+DESCRIPTOR.message_types_by_name['DebugCommand'] = _DEBUGCOMMAND
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Command = _reflection.GeneratedProtocolMessageType('Command', (_message.Message,), dict(
@@ -125,6 +164,13 @@ CommandList = _reflection.GeneratedProtocolMessageType('CommandList', (_message.
   # @@protoc_insertion_point(class_scope:encommand.CommandList)
   ))
 _sym_db.RegisterMessage(CommandList)
+
+DebugCommand = _reflection.GeneratedProtocolMessageType('DebugCommand', (_message.Message,), dict(
+  DESCRIPTOR = _DEBUGCOMMAND,
+  __module__ = 'enginecmd_pb2'
+  # @@protoc_insertion_point(class_scope:encommand.DebugCommand)
+  ))
+_sym_db.RegisterMessage(DebugCommand)
 
 
 DESCRIPTOR._options = None
